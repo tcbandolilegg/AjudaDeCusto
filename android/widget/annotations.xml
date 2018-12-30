@@ -1,0 +1,10 @@
+<root>
+    <item name='android.widget.EditText'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+    <item name='android.widget.TextView void setEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val name="pure" val="true" />
+        </annotation>
+    </item>
+</root>

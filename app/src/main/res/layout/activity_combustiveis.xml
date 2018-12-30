@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Combustiveis">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/fundoapp"
+        tools:ignore="MissingConstraints,contentDescription"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <LinearLayout
+        android:id="@+id/View_combustiveis"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:padding="0dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="263dp">
+
+        <ImageView
+            android:id="@+id/img_combustiveis"
+            android:layout_width="wrap_content"
+            android:layout_height="138dp"
+            app:srcCompat="@drawable/tipodecombustivel"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/l_gasolina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gasolina"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/getGasolina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName|numberDecimal"
+            android:selectAllOnFocus="true"
+            android:text="@string/zero"
+            tools:ignore="Autofill,LabelFor" />
+
+        <TextView
+            android:id="@+id/l_Alcool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alcool"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/getAlcool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName|numberDecimal"
+            android:selectAllOnFocus="true"
+            android:text="@string/zero"
+            tools:ignore="Autofill,LabelFor"/>
+
+        <TextView
+            android:id="@+id/l_Diesel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/diesel"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/getDiesel"
+            android:labelFor="@+id/getDiesel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName|numberDecimal"
+            android:selectAllOnFocus="true"
+            android:text="@string/zero"
+            tools:ignore="Autofill,LabelFor"/>
+
+        <TextView
+            android:id="@+id/l_Gnv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gnv"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/getGnv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName|numberDecimal"
+            android:selectAllOnFocus="true"
+            android:text="@string/zero"
+            tools:ignore="Autofill,LabelFor"/>
+
+        <LinearLayout
+            android:id="@+id/View_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_atualiza"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="199dp"
+                android:layout_height="wrap_content"
+                android:text="@string/atualizar"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/bt_prossegue"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:text="@string/prosseguir"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
