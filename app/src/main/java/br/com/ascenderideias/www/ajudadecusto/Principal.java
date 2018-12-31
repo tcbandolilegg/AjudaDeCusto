@@ -33,15 +33,15 @@ public class Principal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
         setTitle("Ajuda de Custo");
-
-        //TODO usar MAPS
-        origem = findViewById(R.id.get_cidorigem);  //TODO usar MAPS
         //Bom mas por onde começar? Primeiro acesse o link https://console.developers.google.com/project e crie um projeto para o seu app, que ira utilizar o Google Maps Android API:
 
         //https://medium.com/android-dev-br/google-maps-api-android-por-onde-come%C3%A7ar-f7c6f71f3467
         //float[] results = new float[1];
         //Location.distanceBetween(oldPosition.latitude, oldPosition.longitude,
         //                newPosition.latitude, newPosition.longitude, results);
+
+        //TODO usar MAPS
+        origem = findViewById(R.id.get_cidorigem);  //TODO usar MAPS
 
         destino = findViewById(R.id.get_ciddestino);  //TODO usar MAPS
         distancia = findViewById(R.id.get_distkm);//TODO calcular com MAPS
