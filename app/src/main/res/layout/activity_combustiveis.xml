@@ -13,10 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        app:srcCompat="@drawable/fundoapp"
-        tools:ignore="MissingConstraints,contentDescription"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:background="@drawable/fundoapplimpo"
+        tools:ignore="MissingConstraints,contentDescription" />
 
     <LinearLayout
         android:id="@+id/View_combustiveis"
