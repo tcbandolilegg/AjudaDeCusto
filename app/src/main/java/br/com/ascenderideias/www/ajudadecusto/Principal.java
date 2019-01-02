@@ -3,6 +3,8 @@ package br.com.ascenderideias.www.ajudadecusto;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -166,4 +168,28 @@ public class Principal extends AppCompatActivity {
             }
         }
      };
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_compartilhar:
+                Toast.makeText(this, "Fazer maneira de compartilhar", Toast.LENGTH_LONG).show(); // TODO IMPLEMENTAR O CAMPARTILHAR
+                return true;
+            case R.id.menu_faleconosco:
+                Toast.makeText(this, "enviar e-mail ouo msn pelo whats", Toast.LENGTH_LONG).show(); // TODO IMPLEMENTAR envio de e-mail
+                return true;
+            case R.id.menu_atualiza:
+                Toast.makeText(this, "Atualizar Preços", Toast.LENGTH_LONG).show(); // TODO IMPLEMENTAR O chamar novamente a activity de atualizacao
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
 }

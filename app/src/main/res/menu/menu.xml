@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_compartilhar"
+        android:orderInCategory="100"
+        android:title="Compartilhar"
+        app:showAsAction="never">
+            </item>
+    <item
+        android:id="@+id/menu_faleconosco"
+        android:orderInCategory="100"
+        android:title="Fale Conosco"
+        app:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/menu_atualiza"
+        android:orderInCategory="100"
+        android:title="Atualiza Preços"
+        app:showAsAction="never">
+    </item>
+
+
+</menu>
