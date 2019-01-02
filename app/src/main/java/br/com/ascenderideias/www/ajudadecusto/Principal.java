@@ -23,6 +23,8 @@ public class Principal extends AppCompatActivity {
     EditText m_ajuda_custo;
     public float v_litro;
     public boolean calcular;
+    float v1, v2;
+
 
     public Principal() {
         PREFS_NAME = "CombPrecos";
@@ -45,8 +47,8 @@ public class Principal extends AppCompatActivity {
 
         destino = findViewById(R.id.get_ciddestino);  //TODO usar MAPS
         distancia = findViewById(R.id.get_distkm);//TODO calcular com MAPS
-        valor_litro = findViewById(R.id.v_vallitro);
-        autonomia = findViewById(R.id.get_autonomia);
+        valor_litro = findViewById(R.id.v_vallitro); // é trazido da shared pref conforme a escolha do combustivel
+        autonomia = findViewById(R.id.get_autonomia); // TODO criar bd de carros e autonomias conforme combustivel
         m_ajuda_custo = findViewById(R.id.calculo_ajudacusto);
         calcular = false;
 
@@ -89,6 +91,7 @@ public class Principal extends AppCompatActivity {
                         calcular = true;
                         break;
                     default:
+                        v_litro = 0;
                         calcular = false;
                         break;
                 }
@@ -97,7 +100,7 @@ public class Principal extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel não entrou no switch", Toast.LENGTH_LONG).show();
             }
         };
         escolheComustivel.setOnItemSelectedListener(combescolhido);
@@ -106,11 +109,29 @@ public class Principal extends AppCompatActivity {
 
     private View.OnClickListener meusBotoes = new View.OnClickListener() {
         public void onClick(View v) {
-            float v1, v2;
-            v1 = Float.parseFloat(distancia.getText().toString());
-            v2 = Float.parseFloat(autonomia.getText().toString());
+            //      float v1, v2;
+
+            if (distancia.getText() == null) {
+                v1 = 0;
+                distancia.setError("Precisa informar a distancia em Km");
+                calcular = false;
+                distancia.requestFocus();
+            } else {
+                v1 = Float.parseFloat(distancia.getText().toString());
+            }
+            if (autonomia.getText() == null) {
+                v2 = 0;
+                autonomia.setError("Precisa informar a autonomia em Km/l");
+                calcular = false;
+                autonomia.requestFocus();
+            } else {
+                v2 = Float.parseFloat(autonomia.getText().toString());
+            }
+
+
             if (v_litro == 0) {
                 Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel", Toast.LENGTH_LONG).show();
+                calcular = false;
             }
 
             if (v1 == 0) {
@@ -144,5 +165,5 @@ public class Principal extends AppCompatActivity {
                 }
             }
         }
-    };
+     };
 }
