@@ -189,6 +189,7 @@ public class Principal extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+                /// novo
 
         }
     }
