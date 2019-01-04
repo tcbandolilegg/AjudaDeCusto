@@ -111,41 +111,31 @@ public class Principal extends AppCompatActivity {
 
     private View.OnClickListener meusBotoes = new View.OnClickListener() {
         public void onClick(View v) {
-            //      float v1, v2;
+            float v1, v2;
 
-            if (distancia.getText() == null) {
-                v1 = 0;
-                distancia.setError("Precisa informar a distancia em Km");
-                calcular = false;
-                distancia.requestFocus();
-            } else {
-                v1 = Float.parseFloat(distancia.getText().toString());
-            }
-            if (autonomia.getText() == null) {
-                v2 = 0;
-                autonomia.setError("Precisa informar a autonomia em Km/l");
-                calcular = false;
-                autonomia.requestFocus();
-            } else {
-                v2 = Float.parseFloat(autonomia.getText().toString());
-            }
-
+            v1 = Float.parseFloat(distancia.getText().toString());
+            v2 = Float.parseFloat(autonomia.getText().toString());
 
             if (v_litro == 0) {
                 Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel", Toast.LENGTH_LONG).show();
                 calcular = false;
+            } else {
+                calcular = true;
             }
 
             if (v1 == 0) {
                 Toast.makeText(getBaseContext(), "Precisa informar a distancia em Km", Toast.LENGTH_LONG).show();
                 calcular = false;
+            } else {
+                calcular = true;
             }
 
             if (v2 == 0) {
                 Toast.makeText(getBaseContext(), "Precisa informar a autonimia do veiculo", Toast.LENGTH_LONG).show();
                 calcular = false;
+            } else {
+                calcular = true;
             }
-
 
             if (calcular) {
                 switch (v.getId()) {
@@ -167,7 +157,7 @@ public class Principal extends AppCompatActivity {
                 }
             }
         }
-     };
+    };
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -189,7 +179,7 @@ public class Principal extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-                /// novo
+            /// novo
 
         }
     }

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="br.com.ascenderideias.www.ajudadecusto.Principal">
 
     <LinearLayout
         android:id="@+id/Veiw_ajuda_de_custo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+
         android:orientation="vertical"
         android:padding="5dp">
 
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:text="@string/origem"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <EditText
@@ -30,7 +30,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:selectAllOnFocus="true"
-            android:textSize="14sp"
+            android:textSize="12sp"
             tools:ignore="Autofill,LabelFor" />
 
         <TextView
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="@string/destino"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <EditText
@@ -49,7 +49,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:selectAllOnFocus="true"
-            android:textSize="14sp"
+            android:textSize="12sp"
             tools:ignore="Autofill,LabelFor" />
 
         <TextView
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="@string/distancia_em_km"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <EditText
@@ -68,7 +68,8 @@
             android:ems="10"
             android:inputType="textPersonName|numberDecimal"
             android:selectAllOnFocus="true"
-            android:textSize="14sp"
+            android:textSize="12sp"
+            android:text="@string/zero"
             tools:ignore="Autofill,LabelFor" />
 
         <TextView
@@ -77,7 +78,7 @@
             android:layout_height="wrap_content"
             android:text="@string/tipo_de_combustivel"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <Spinner
@@ -92,7 +93,7 @@
             android:layout_height="wrap_content"
             android:text="@string/valor_do_litro"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <EditText
@@ -102,7 +103,7 @@
             android:ems="10"
             android:focusableInTouchMode="false"
             android:inputType="textPersonName|numberDecimal"
-            android:textSize="14sp"
+            android:textSize="12sp"
             tools:ignore="Autofill,LabelFor" />
 
         <TextView
@@ -111,7 +112,7 @@
             android:layout_height="wrap_content"
             android:text="@string/autonomia_m_dia_km_l"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <EditText
@@ -121,7 +122,8 @@
             android:ems="10"
             android:inputType="textPersonName|numberDecimal"
             android:selectAllOnFocus="true"
-            android:textSize="14sp"
+            android:textSize="12sp"
+            android:text="@string/zero"
             tools:ignore="Autofill,LabelFor" />
 
         <LinearLayout
@@ -140,7 +142,7 @@
                 android:layout_weight="3"
                 android:text="@string/ida_ou_volta"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:textStyle="bold" />
 
             <View
@@ -158,7 +160,7 @@
                 android:layout_weight="3"
                 android:text="@string/ida_e_volta"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp"
+                android:textSize="11sp"
 
                 android:textStyle="bold" />
         </LinearLayout>
@@ -176,12 +178,12 @@
         <EditText
             android:id="@+id/calculo_ajudacusto"
             android:layout_width="match_parent"
-            android:layout_height="39dp"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/zero"
             android:ems="10"
             android:focusableInTouchMode="false"
             android:inputType="textPersonName|numberDecimal"
-            android:textSize="14sp"
+            android:textSize="12sp"
             tools:ignore="Autofill,LabelFor" />
 
         <Button
@@ -192,8 +194,8 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/sair"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
