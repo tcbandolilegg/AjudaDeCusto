@@ -116,46 +116,54 @@ public class Principal extends AppCompatActivity {
             v1 = Float.parseFloat(distancia.getText().toString());
             v2 = Float.parseFloat(autonomia.getText().toString());
 
-            if (v_litro == 0) {
-                Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel", Toast.LENGTH_LONG).show();
-                calcular = false;
+            if (v.getId() == R.id.bt_sair) {
+                finish();
             } else {
-                calcular = true;
-            }
 
-            if (v1 == 0) {
-                Toast.makeText(getBaseContext(), "Precisa informar a distancia em Km", Toast.LENGTH_LONG).show();
-                calcular = false;
-            } else {
-                calcular = true;
-            }
-
-            if (v2 == 0) {
-                Toast.makeText(getBaseContext(), "Precisa informar a autonimia do veiculo", Toast.LENGTH_LONG).show();
-                calcular = false;
-            } else {
-                calcular = true;
-            }
-
-            if (calcular) {
-                switch (v.getId()) {
-                    case R.id.bt_ida:
-                        Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
-                        ajuda_custo = (v1 / v2) * v_litro;
-                        m_ajuda_custo.setText(String.valueOf(ajuda_custo));
-                        break;
-                    case R.id.bt_idaevolta:
-                        Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
-                        ajuda_custo = 2 * (v1 / v2) * v_litro;
-                        m_ajuda_custo.setText(String.valueOf(ajuda_custo));
-                        break;
-                    case R.id.bt_sair:
-                        finish();
-                        break;
-                    default:
-                        break;
+                if (v_litro == 0) {
+                    Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel", Toast.LENGTH_LONG).show();
+                    calcular = false;
+                } else {
+                    calcular = true;
                 }
+
+                if (v1 == 0) {
+                    Toast.makeText(getBaseContext(), "Precisa informar a distancia em Km", Toast.LENGTH_LONG).show();
+                    calcular = false;
+                } else {
+                    calcular = true;
+                }
+
+                if (v2 == 0) {
+                    Toast.makeText(getBaseContext(), "Precisa informar a autonimia do veiculo", Toast.LENGTH_LONG).show();
+                    calcular = false;
+                } else {
+                    calcular = true;
+                }
+
+                if (calcular) {
+                    switch (v.getId()) {
+                        case R.id.bt_ida:
+                            Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
+                            ajuda_custo = (v1 / v2) * v_litro;
+                            m_ajuda_custo.setText(String.valueOf(ajuda_custo));
+                            break;
+                        case R.id.bt_idaevolta:
+                            Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
+                            ajuda_custo = 2 * (v1 / v2) * v_litro;
+                            m_ajuda_custo.setText(String.valueOf(ajuda_custo));
+                            break;
+                        case R.id.bt_sair:
+                            finish();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
             }
+
+
         }
     };
 
