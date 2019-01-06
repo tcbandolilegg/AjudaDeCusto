@@ -17,8 +17,9 @@
     <string name="alcool">AlcoolGNV</string>
     <string name="diesel">DieselNV</string>
     <string name="gnv">GNV</string>
-
-
+    <string name="menucompartilhar">Compartilhar</string>
+    <string name="menufale_conosco">Fale Conosco</string>
+    <string name="menuatualiza_pre_os">Atualiza Preços</string>
 
 
     <string-array name="tipo_combustivel">
