@@ -5,24 +5,20 @@
         android:id="@+id/menu_compartilhar"
         android:orderInCategory="100"
         android:title="@string/menucompartilhar"
-        app:showAsAction="never"
-        >
-            </item>
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="never" />
     <item
         android:id="@+id/menu_faleconosco"
         android:orderInCategory="100"
         android:title="@string/menufale_conosco"
-        app:showAsAction="never"
-        >
-    </item>
+        android:icon="@android:drawable/ic_dialog_email"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/menu_atualiza"
         android:orderInCategory="100"
         android:title="@string/menuatualiza_pre_os"
-        app:showAsAction="never"
-        >
-    </item>
+        app:showAsAction="never" />
 
 
 </menu>

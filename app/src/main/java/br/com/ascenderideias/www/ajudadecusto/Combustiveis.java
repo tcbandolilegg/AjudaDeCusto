@@ -1,6 +1,5 @@
 package br.com.ascenderideias.www.ajudadecusto;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,20 +11,17 @@ import android.widget.Toast;
 
 
 public class Combustiveis extends AppCompatActivity implements View.OnClickListener {
+    public final String PREFS_NAME = "CombPrecos";
+    public float val_gasolina;
+    public float val_alcool;
+    public float val_diesel;
+    public float val_gnv;
+    public SharedPreferences sharedPref;
     EditText gasolina;
     EditText alcool;
     EditText diesel;
     EditText gnv;
     private boolean editmod, continua;
-
-
-    public float val_gasolina;
-    public float val_alcool;
-    public float val_diesel;
-    public float val_gnv;
-
-    public final String PREFS_NAME = "CombPrecos";
-    public SharedPreferences sharedPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,7 +60,7 @@ public class Combustiveis extends AppCompatActivity implements View.OnClickListe
                 if (editmod) {
                     salvarValoresCombustiveis();
                     if (val_gasolina == 0 || val_alcool == 0 || val_diesel == 0 || val_gnv == 0) {
-                        Toast.makeText(getBaseContext(), "Valor Combustivel não pode ficar zerado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), "Valor Combustivel não pode ficar zerado", Toast.LENGTH_SHORT).show();
                     } else {
                         continua = true;
                     }

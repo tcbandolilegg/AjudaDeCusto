@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 public class Principal extends AppCompatActivity {
     private final String PREFS_NAME;
+    public float v_litro;
+    public boolean calcular;
     EditText origem;
     EditText destino;
     EditText distancia;
@@ -23,10 +25,64 @@ public class Principal extends AppCompatActivity {
     EditText autonomia;
     float ajuda_custo;
     EditText m_ajuda_custo;
-    public float v_litro;
-    public boolean calcular;
     float v1, v2;
+    private View.OnClickListener meusBotoes = new View.OnClickListener() {
+        public void onClick(View v) {
+            float v1, v2;
 
+            v1 = Float.parseFloat(distancia.getText().toString());
+            v2 = Float.parseFloat(autonomia.getText().toString());
+
+            if (v.getId() == R.id.bt_sair) {
+                finish();
+            } else {
+
+                if (v_litro == 0) {
+                    Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel", Toast.LENGTH_SHORT).show();
+                    calcular = false;
+                } else {
+                    calcular = true;
+                }
+
+                if (v1 == 0) {
+                    Toast.makeText(getBaseContext(), "Precisa informar a distancia em Km", Toast.LENGTH_SHORT).show();
+                    calcular = false;
+                } else {
+                    calcular = true;
+                }
+
+                if (v2 == 0) {
+                    Toast.makeText(getBaseContext(), "Precisa informar a autonimia do veiculo", Toast.LENGTH_SHORT).show();
+                    calcular = false;
+                } else {
+                    calcular = true;
+                }
+
+                if (calcular) {
+                    switch (v.getId()) {
+                        case R.id.bt_ida:
+                            Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
+                            ajuda_custo = (v1 / v2) * v_litro;
+                            m_ajuda_custo.setText(String.valueOf(ajuda_custo));
+                            break;
+                        case R.id.bt_idaevolta:
+                            Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
+                            ajuda_custo = 2 * (v1 / v2) * v_litro;
+                            m_ajuda_custo.setText(String.valueOf(ajuda_custo));
+                            break;
+                        case R.id.bt_sair:
+                            finish();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+            }
+
+
+        }
+    };
 
     public Principal() {
         PREFS_NAME = "CombPrecos";
@@ -46,7 +102,6 @@ public class Principal extends AppCompatActivity {
 
         //TODO usar MAPS
         origem = findViewById(R.id.get_cidorigem);  //TODO usar MAPS
-
         destino = findViewById(R.id.get_ciddestino);  //TODO usar MAPS
         distancia = findViewById(R.id.get_distkm);//TODO calcular com MAPS
         valor_litro = findViewById(R.id.v_vallitro); // é trazido da shared pref conforme a escolha do combustivel
@@ -102,70 +157,11 @@ public class Principal extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel não entrou no switch", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel não entrou no switch", Toast.LENGTH_SHORT).show();
             }
         };
         escolheComustivel.setOnItemSelectedListener(combescolhido);
     }
-
-
-    private View.OnClickListener meusBotoes = new View.OnClickListener() {
-        public void onClick(View v) {
-            float v1, v2;
-
-            v1 = Float.parseFloat(distancia.getText().toString());
-            v2 = Float.parseFloat(autonomia.getText().toString());
-
-            if (v.getId() == R.id.bt_sair) {
-                finish();
-            } else {
-
-                if (v_litro == 0) {
-                    Toast.makeText(getBaseContext(), "Precisa escolher um Combustivel", Toast.LENGTH_LONG).show();
-                    calcular = false;
-                } else {
-                    calcular = true;
-                }
-
-                if (v1 == 0) {
-                    Toast.makeText(getBaseContext(), "Precisa informar a distancia em Km", Toast.LENGTH_LONG).show();
-                    calcular = false;
-                } else {
-                    calcular = true;
-                }
-
-                if (v2 == 0) {
-                    Toast.makeText(getBaseContext(), "Precisa informar a autonimia do veiculo", Toast.LENGTH_LONG).show();
-                    calcular = false;
-                } else {
-                    calcular = true;
-                }
-
-                if (calcular) {
-                    switch (v.getId()) {
-                        case R.id.bt_ida:
-                            Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
-                            ajuda_custo = (v1 / v2) * v_litro;
-                            m_ajuda_custo.setText(String.valueOf(ajuda_custo));
-                            break;
-                        case R.id.bt_idaevolta:
-                            Toast.makeText(getBaseContext(), "Calculando", Toast.LENGTH_SHORT).show();
-                            ajuda_custo = 2 * (v1 / v2) * v_litro;
-                            m_ajuda_custo.setText(String.valueOf(ajuda_custo));
-                            break;
-                        case R.id.bt_sair:
-                            finish();
-                            break;
-                        default:
-                            break;
-                    }
-                }
-
-            }
-
-
-        }
-    };
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);

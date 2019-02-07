@@ -6,6 +6,7 @@
     <string name="tipo_de_combustivel">Tipo de Combustivel</string>
     <string name="valor_do_litro">Valor do Litro</string>
     <string name="autonomia_m_dia_km_l">Autonomia Média (Km/L)</string>
+    <string name="consumo_m_km_l">Consumo médio (km/l)</string>
     <string name="ajuda_de_custo">Total de ajuda de custo</string>
     <string name="ida_ou_volta">Ida ou Volta</string>
     <string name="ida_e_volta">Ida e Volta</string>
@@ -13,13 +14,14 @@
     <string name="zero">0</string>
     <string name="atualizar">Atualizar</string>
     <string name="prosseguir">Proseguir</string>
-    <string name="gasolina">GasolinaNV</string>
-    <string name="alcool">AlcoolGNV</string>
-    <string name="diesel">DieselNV</string>
+    <string name="gasolina">Gasolina</string>
+    <string name="alcool">Alcool</string>
+    <string name="diesel">Diesel</string>
     <string name="gnv">GNV</string>
     <string name="menucompartilhar">Compartilhar</string>
     <string name="menufale_conosco">Fale Conosco</string>
     <string name="menuatualiza_pre_os">Atualiza Preços</string>
+    <string name="moeda">R$</string>
 
 
     <string-array name="tipo_combustivel">

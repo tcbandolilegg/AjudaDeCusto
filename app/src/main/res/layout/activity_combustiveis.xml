@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
- xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -72,7 +71,7 @@
             android:inputType="textPersonName|numberDecimal"
             android:selectAllOnFocus="true"
             android:text="@string/zero"
-            tools:ignore="Autofill,LabelFor"/>
+            tools:ignore="Autofill,LabelFor" />
 
         <TextView
             android:id="@+id/l_Diesel"
@@ -85,15 +84,15 @@
 
         <EditText
             android:id="@+id/getDiesel"
-            android:labelFor="@+id/getDiesel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:enabled="false"
             android:inputType="textPersonName|numberDecimal"
+            android:labelFor="@+id/getDiesel"
             android:selectAllOnFocus="true"
             android:text="@string/zero"
-            tools:ignore="Autofill,LabelFor"/>
+            tools:ignore="Autofill,LabelFor" />
 
         <TextView
             android:id="@+id/l_Gnv"
@@ -113,7 +112,7 @@
             android:inputType="textPersonName|numberDecimal"
             android:selectAllOnFocus="true"
             android:text="@string/zero"
-            tools:ignore="Autofill,LabelFor"/>
+            tools:ignore="Autofill,LabelFor" />
 
         <LinearLayout
             android:id="@+id/View_bt"
@@ -126,18 +125,23 @@
                 android:id="@+id/bt_atualiza"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="199dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="3"
                 android:text="@string/atualizar"
-                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
                 android:textStyle="bold" />
+
 
             <Button
                 android:id="@+id/bt_prossegue"
                 style="@style/Widget.AppCompat.Button"
-                android:layout_width="205dp"
-                android:layout_height="wrap_content"
+                android:layout_width="199dp"
+                android:layout_height="50dp"
+                android:layout_weight="3"
                 android:text="@string/prosseguir"
-                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
